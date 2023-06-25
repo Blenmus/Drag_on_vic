@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="">
+  <link rel="stylesheet" href="output.css">
+  <link rel="stylesheet" href="dov.css">
+  <title>Document</title>
+  <link rel="icon" href="Images/pride week.png">
+
+</head>
+
+
+<body class="bg-lavender-100 overflow-x-hidden">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
+  
+<!--this is where the vue addon is mounted-->
+
+
+  
+<!--
+  nav bar, this section uses a script to create a smooth dropdown nav bar
+-->
+  <nav id="home" class="p-5 bg-white shadow lg:flex lg:items-center lg: justify-between relative z-10">
+    <div class="flex justify-between items-center">
+      <span class="text-2xl font-normal cursor-pointer">
+        <img class="h-20 inline" src="Images/logo.png" alt="">
+      </span>
+      <span class="lg:hidden block" >
+        <div name="menu" onclick="Menu(this)">  
+          <svg class="ham hamRotate ham8 " viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+            <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+          </svg>
+        </div>
+      </span>
+    </div> 
+    <ul class="lg:flex lg:items-center  lg:z-auto lg:static absolute bg-white w-full left-0 z-[-1]
+    lg:w-auto lg:py-0 py-4 lg:pl-0 pl-7 lg:opactiy-0 opacity-100 top-[-490px] transition-all duration-500 ease-in-out">
+      <li class="mx-4 my-10 lg:my-0">
+        <a class="text-xl hover:text-lavender-400 text-lavender-800 duration-200" href="#about">ABOUT US</a>
+      </li>
+      <li class="mx-4 my-10 lg:my-0">
+        <a class="text-xl hover:text-lavender-400 text-lavender-800 duration-200" href="#WHAT">WHAT'S ON</a>
+      </li>
+      <li class="mx-4 my-10 lg:my-0">
+        <a class="text-xl hover:text-lavender-400 text-lavender-800 duration-200" href="#MEET">MEET THE PERFORMERS</a>
+      </li>
+      <li class="mx-4 my-10 lg:my-0">
+        <a class="text-xl hover:text-lavender-400 text-lavender-800 duration-200" href="#GALLERY">GALLERY</a>
+      </li>
+      <li class="mx-4 my-10 lg:my-0">
+        <a class="text-xl hover:text-lavender-400 text-lavender-800 duration-200" href="#CONTACT">CONTACT US</a>
+      </li>
+      
+      <div>
+        <div class=" flex items-center justify-start lg:justify-between ">
+          <a class="px-4" href="https://www.facebook.com/Dragqueenshamilton/">  <?xml version="1.0"?>
+            <svg class="fill-lavender-800 hover:fill-lavender-300 hover:scale-110 duration-200 lg:px-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"/></svg>
+          </a>
+          <a class="px-4" href="https://www.instagram.com/victorsindrag/?hl=en">  <?xml version="1.0"?>
+            <svg class="fill-lavender-800 hover:fill-lavender-300 hover:scale-110 duration-200 lg:px-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"/></svg>
+          </a>
+          <a class="px-4" href="https://www.tiktok.com/@dragonvictok">  <?xml version="1.0"?>
+            <svg class="fill-lavender-800 hover:fill-lavender-300 hover:scale-110 duration-200 lg:px-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z"/></svg>
+        
+          </a>
+          </div>
+  </nav>
+
+
+  <!--
+    utilising GSAP, this header image is created using 6 cutout png with transparency. 
+    in between the layers there are 4 characatures, these characatures are connected to the gsap scrolltrigger animation
+    the script for this tells the images to move in or out depending on where the scroll is, the movement is also dampened to create
+    the effect of inertia.
+    these animations are responsively created, so each size changes where they are located so that they fit.
+
+    there is also a separate 6 layers of cutouts for the larger size so that the images can fit properly.
+  -->
+  <header id="head" class=" overflow-hidden">
+    <div class="relative">
+      <img class="bg-cover w-screen h-auto drop-shadow-md hidden md:block" src="hero/layer_1.png" alt="">
+      <img class="bg-cover w-screen h-auto drop-shadow-md md:hidden" src="hero/sm_layer_1.png" alt="">
+      <div>
+        <img class="bg-cover absolute top-0 drop-shadow-xl hidden md:block" src="hero/layer_2.png" alt="">
+        <img class="bg-cover absolute top-0 drop-shadow-xl md:hidden" src="hero/sm_layer_2.png" alt="">
+      </div>
+      
+      <div>
+        <img class="bg-cover absolute top-0 drop-shadow-xl hidden md:block" src="hero/layer_3.png" alt="">
+        <img class="bg-cover absolute top-0 drop-shadow-xl md:hidden" src="hero/sm_layer_3.png" alt="">
+      </div>
+      <div id="pitchy" class="h-[30em] sm:h-[40em] md:h-[50em] absolute top-[8rem] sm:top-[14rem] md:top-[2rem] right-[2rem] sm:right-[8rem] md:right-[5rem] lg:right-[15rem] xl:right-[30rem]">
+        <img class="max-h-full object-scale-down"  src="Images/pitchy.png" alt="">
+      </div>
+      <div id="rita" class=" h-[30em] sm:h-[40rem] md:h-[50em] absolute top-[8rem] sm:top-[14rem] md:top-[2rem] left-[2rem] sm:left-[8rem]  md:left-[5rem] lg:left-[15rem] xl:left-[30rem]">
+        <img class="max-h-full object-scale-down"  src="Images/rita.png" alt="">
+      </div>
+      <div>
+        <img class="bg-cover absolute top-0 drop-shadow-xl hidden md:block" src="hero/layer_4.png" alt="">
+        <img class="bg-cover absolute top-0 drop-shadow-xl md:hidden" src="hero/sm_layer_4.png" alt="">
+      </div>
+
+      <div>
+        <img class="bg-cover absolute top-0 drop-shadow-xl hidden md:block" src="hero/layer_5.png" alt="">
+        <img class="bg-cover absolute top-0 drop-shadow-xl md:hidden" src="hero/sm_layer_5.png" alt="">
+      </div>
+      <div>
+        <img class="bg-cover absolute top-0 drop-shadow-xl hidden md:block" src="hero/layer_6.png" alt="">
+        <img class="bg-cover absolute top-0 drop-shadow-xl md:hidden" src="hero/sm_layer_6.png" alt="">
+      </div>
+      <div id="prada" class="h-[30em] sm:h-[40em] md:h-[50em] absolute top-[7em] sm:top-[14rem] md:top-[8rem] left-[-3rem] sm:left-[-1rem] md:left-[-3rem] lg:left-[5rem] xl:left-[10rem]">
+        <img class="max-h-full object-scale-down "  src="Images/boozhay.png" alt="">
+      </div>
+      <div id="sheila" class="h-[30em] sm:h-[40em] md:h-[50em] absolute top-[7em] sm:top-[14rem] md:top-[7em] right-[-4rem] sm:right-[-1rem] md:right-[-3rem] lg:right-[5rem] xl:right-[10rem]">
+        <img class=" max-h-full object-scale-down"  src="Images/sheeila.png" alt="">
+      </div>
+      <div class="pointer-events-none">
+        <img class=" bg-cover absolute top-0 drop-shadow-xl hidden md:block" src="hero/layer_7.png" alt="">
+        <img class="bg-cover absolute top-0 drop-shadow-xl md:hidden" src="hero/sm_layer_7.png" alt="">
+      </div>
+    </div>
+
+
+  </header>
+
+
+
+
+
+
+
+<!--this section is an infinite animated marquee
+it needs two identicle divs to be able to have one of them reset while the other continues
+on, this is done through an extended marquee animation through tailwind.config.js-->  
+</div>
+
+
+<div id="about" class="relative flex overflow-hidden  bg-slate-800 shadow-inner">
+  <div class="py-6 animate-marquee whitespace-nowrap">
+    <span class="text-lavender-200 text-4xl mx-4">GLITTERALLY THE BEST DRAG IN TOWN</span>
+    <span class="text-lavender-200 text-4xl mx-4">WE'RE LIKE UNICORNS, BUT WITH BETTER WIGS AND HIGHER HEELS.....SOMETIMES</span>
+    <span class="text-lavender-200 text-4xl mx-4">OUR SHOWS ARE LIKE A BOX OF CHOCOLATES, FILLED WITH CHERRY RIPES</span>
+    <span class="text-lavender-200 text-4xl mx-4">WHERE THE ONLY THING WE TAKE SERIOUSLY IS OUR DRAG, AND EVEN THAT'S UP FOR DEBATE</span>
+    <span class="text-lavender-200 text-4xl mx-4">JOIN US FOR A NIGHT OF DRAG-MAZING PERFORMANCES AND QUESTIONABLE DECISIONS</span>
+
+  </div>
+
+  <div class="absolute top-0 py-6 animate-marquee2 whitespace-nowrap">
+    <span class="text-lavender-200 text-4xl mx-4">GLITTERALLY THE BEST DRAG IN TOWN</span>
+    <span class="text-lavender-200 text-4xl mx-4">WE'RE LIKE UNICORNS, BUT WITH BETTER WIGS AND HIGHER HEELS.....SOMETIMES</span>
+    <span class="text-lavender-200 text-4xl mx-4">OUR SHOWS ARE LIKE A BOX OF CHOCOLATES, FILLED WITH CHERRY RIPES</span>
+    <span class="text-lavender-200 text-4xl mx-4">WHERE THE ONLY THING WE TAKE SERIOUSLY IS OUR DRAG, AND EVEN THAT'S UP FOR DEBATE</span>
+    <span class="text-lavender-200 text-4xl mx-4">JOIN US FOR A NIGHT OF DRAG-MAZING PERFORMANCES AND QUESTIONABLE DECISIONS</span>
+
+  </div>
+</div>
+
+
+<!--this section is for the About us section, pretty simple set up just for text-->
+<section  class="px-20 py-10 h-auto bg-gradient-to-br from-lavender-100 to-lavender-300 flex justify-center items-center">
+  <div class="py-10 text-center ">
+    <h1 class="text-7xl text-center my-20 text-lavender-800">ABOUT US</h1>
+    <p class="text-xl lg:text-2xl text-lavender-800">Welcome our world of drag, Drag on Vic! We're your go-to source for stunning drag performances in the Waikato. Join us for our monthly shows or book us for your own event.</p>
+    <p class="text-xl lg:text-2xl text-lavender-800 py-10"> Drag on Vic was originally founded in 2018 by Tristan Fisher and Simon Shanley, now run by an incredible team that is committed to creating safe spaces for our rainbow community. Drag on Vic is a celebration of creativity, diversity, and self-expression. We are proud to have an ever growing team of incredible performers who bring our shows to life.</p>
+    <p class="text-xl lg:text-2xl text-lavender-800"> Our mission is to create safe spaces for our rainbow community to explore and celebrate their identities, and to showcase the talent and artistry of our performers. We hope you'll join us for a night of unforgettable entertainment and community</p>
+  </div>
+</section>
+
+
+
+
+<!--
+  this section is the what's on section
+-->
+
+<section id="WHAT" class="w-screen min-h-screen">
+  <h1 class="text-7xl text-center my-20 text-lavender-800">WHAT'S ON</h1>
+  <div class=" w-[100%] grid place-items-center min-h-screen sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <div class="relative m-24 w-[320px] h-[570px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+      <img class="absolute top-0 left-0 w-full h-full group-hover:scale-110 duration-300 group-hover:blur-md" src="Images/rbg 2 facebook stories.png" alt="">
+      
+      <a href="#">
+        <button class="text-lavender-800  hover:scale-110 focus:bg-lavender-700 duration-300 ease-in-out opacity-0 group-hover:opacity-100 relative top-12 items-center justify-center  w-[150px] left-[50%] translate-x-[-50%] h-16 bg-white ">BOOK</button>
+      </a> 
+        <div class="relative top-0 z-50 w-full h-[450px]  bg-white text-white translate-y-[400px] group-hover:translate-y-[100px] duration-300 ease-in-out">
+        <h2 class="text-lavender-800 text-center justify-center text-3xl py-3">Royal Battlegrounds Round 2</h2>
+        <div class="justify-center align-middle py-10">
+          <p class="text-lavender-800 text-2xl py-3 text-center justify-center">$25</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Hosted by Prada Jae and Cruxifix June</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Doors open 8.30pm</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Biddy Muligans</p>
+        </div> 
+      </div>
+    </div>
+    <div class="relative m-24 w-[320px] h-[570px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+      <img class="absolute top-0 left-0 w-full h-full group-hover:scale-110 duration-300 group-hover:blur-md" src="Images/rbg 2 facebook stories.png" alt="">
+      
+      <a href="#">
+        <button class="text-lavender-800  hover:scale-110 focus:bg-lavender-700 duration-300 ease-in-out opacity-0 group-hover:opacity-100 relative top-12 items-center justify-center  w-[150px] left-[50%] translate-x-[-50%] h-16 bg-white ">BOOK</button>
+      </a> 
+        <div class="relative top-0 z-50 w-full h-[450px]  bg-white text-white translate-y-[400px] group-hover:translate-y-[100px] duration-300 ease-in-out">
+        <h2 class="text-lavender-800 text-center justify-center text-3xl py-3">Royal Battlegrounds Round 2</h2>
+        <div class="justify-center align-middle py-10">
+          <p class="text-lavender-800 text-2xl py-3 text-center justify-center">$25</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Hosted by Prada Jae and Cruxifix June</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Doors open 8.30pm</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Biddy Muligans</p>
+        </div> 
+      </div>
+    </div>
+    <div class="relative m-24 w-[320px] h-[570px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+      <img class="absolute top-0 left-0 w-full h-full group-hover:scale-110 duration-300 group-hover:blur-md" src="Images/rbg 2 facebook stories.png" alt="">
+      
+      <a href="#">
+        <button class="text-lavender-800  hover:scale-110 focus:bg-lavender-700 duration-300 ease-in-out opacity-0 group-hover:opacity-100 relative top-12 items-center justify-center  w-[150px] left-[50%] translate-x-[-50%] h-16 bg-white ">BOOK</button>
+      </a> 
+        <div class="relative top-0 z-50 w-full h-[450px]  bg-white text-white translate-y-[400px] group-hover:translate-y-[100px] duration-300 ease-in-out">
+        <h2 class="text-lavender-800 text-center justify-center text-3xl py-3">Royal Battlegrounds Round 2</h2>
+        <div class="justify-center align-middle py-10">
+          <p class="text-lavender-800 text-2xl py-3 text-center justify-center">$25</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Hosted by Prada Jae and Cruxifix June</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Doors open 8.30pm</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Biddy Muligans</p>
+        </div> 
+      </div>
+    </div>
+    <div class="relative m-24 w-[320px] h-[570px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+      <img class="absolute top-0 left-0 w-full h-full group-hover:scale-110 duration-300 group-hover:blur-md" src="Images/rbg 2 facebook stories.png" alt="">
+      
+      <a href="#">
+        <button class="text-lavender-800  hover:scale-110 focus:bg-lavender-700 duration-300 ease-in-out opacity-0 group-hover:opacity-100 relative top-12 items-center justify-center  w-[150px] left-[50%] translate-x-[-50%] h-16 bg-white ">BOOK</button>
+      </a> 
+        <div class="relative top-0 z-50 w-full h-[450px]  bg-white text-white translate-y-[400px] group-hover:translate-y-[100px] duration-300 ease-in-out">
+        <h2 class="text-lavender-800 text-center justify-center text-3xl py-3">Royal Battlegrounds Round 2</h2>
+        <div class="justify-center align-middle py-10">
+          <p class="text-lavender-800 text-2xl py-3 text-center justify-center">$25</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Hosted by Prada Jae and Cruxifix June</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Doors open 8.30pm</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Biddy Muligans</p>
+        </div> 
+      </div>
+    </div>
+    <div class="relative m-24 w-[320px] h-[570px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+      <img class="absolute top-0 left-0 w-full h-full group-hover:scale-110 duration-300 group-hover:blur-md" src="Images/rbg 2 facebook stories.png" alt="">
+      
+      <a href="#">
+        <button class="text-lavender-800  hover:scale-110 focus:bg-lavender-700 duration-300 ease-in-out opacity-0 group-hover:opacity-100 relative top-12 items-center justify-center  w-[150px] left-[50%] translate-x-[-50%] h-16 bg-white ">BOOK</button>
+      </a> 
+        <div class="relative top-0 z-50 w-full h-[450px]  bg-white text-white translate-y-[400px] group-hover:translate-y-[100px] duration-300 ease-in-out">
+        <h2 class="text-lavender-800 text-center justify-center text-3xl py-3">Royal Battlegrounds Round 2</h2>
+        <div class="justify-center align-middle py-10">
+          <p class="text-lavender-800 text-2xl py-3 text-center justify-center">$25</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Hosted by Prada Jae and Cruxifix June</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Doors open 8.30pm</p>
+          <p class="text-lavender-800 py-3 text-center justify-center">Biddy Muligans</p>
+        </div> 
+      </div>
+    </div>
+  </div>
+
+
+
+
+</section>
+<img class="absolute w-screen " src="hero/layered-waves-haikei (6).svg" alt="">
+
+<section id="MEET" class=" w-screen h-fit pt-[500px] lg:pt-[1000px] bg-lavender-500 overflow-hidden" >
+  
+  <h1 class="text-7xl text-center my-20 text-lavender-100">MEET THE PERFORMERS</h1>
+  <div class="flex flex-col-reverse md:flex-row items-center justify-between w-screen">
+    <div class="z-10 ">
+      <h1 class="px-20 text-lavender-100 text-center justify-center md:text-start sm:justify-start text-3xl">Sheila B Right</h1>
+      <p class="px-20 text-lavender-100 text-center justify-center md:text-start sm:justify-start py-10 lg:text-xl">Get ready to be gagged as Sheila B Right takes the stage! This reveal queen knows how to serve up a stunning look, and she's not afraid to take it off for the right moment. With her charisma and charm, Sheila will have you cheering for more.</p>
+    </div>
+
+    <div class="z-10  ">
+      <div class="rounded-full relative m-24 w-[400px] h-[400px] xl:w-[800px] xl:h-[800px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-100 group-hover:opacity-0" src="Images/sheeila.png" alt="">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-0 group-hover:opacity-100" src="Images/sheila kick.png" alt="">
+        <div class="relative top-0 z-50 w-[full] h-[450px]  bg-white text-white translate-y-[400px] xl:translate-y-[800px] xl:group-hover:translate-y-[600px]  group-hover:translate-y-[255px] duration-300 ease-in-out">
+          <h2 class="text-lavender-800 text-center justify-center text-3xl py-3 xl:py-10 xl:text-5xl">Sheila B Right</h2> 
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="flex flex-col-reverse md:flex-row-reverse items-center justify-between w-screen">
+    <div class="z-10 ">
+      <h1 class="px-20 text-lavender-100 text-center justify-center md:text-end sm:justify-end text-3xl">Prada Jae</h1>
+      <p class="px-20 text-lavender-100 text-center justify-center md:text-end sm:justify-end py-10 lg:text-xl">Prepare to be seduced by the sultry and sensational Prada Jae. This burlesque bombshell is the epitome of sex appeal, and her cxnty moves will leave you breathless. With her killer curves and fierce attitude, Prada knows how to work the stage and leave audiences begging for more.</p>
+    </div>
+
+    <div class="z-10  ">
+      <div class="rounded-full relative m-24 w-[400px] h-[400px] xl:w-[800px] xl:h-[800px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-100 group-hover:opacity-0" src="Images/boozhay.png" alt="">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-0 group-hover:opacity-100" src="Images/sitting boozhay.png" alt="">
+        <div class="relative top-0 z-50 w-[full] h-[450px]  bg-white text-white translate-y-[400px] xl:translate-y-[800px] xl:group-hover:translate-y-[600px]  group-hover:translate-y-[255px] duration-300 ease-in-out">
+          <h2 class="text-lavender-800 text-center justify-center text-3xl py-3 xl:py-10 xl:text-5xl">Prada Jae</h2> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+   <div class="flex flex-col-reverse md:flex-row items-center justify-between w-screen">
+    <div class="z-10 ">
+      <h1 class="px-10 text-lavender-100 text-center justify-center md:text-start sm:justify-start text-3xl">Pitchy LaRoux</h1>
+      <p class="px-10 text-lavender-100 text-center justify-center md:text-start sm:justify-start py-10 lg:text-xl">Get ready for a high-energy performance from Pitchy LaRoux! This queen is all about the dance moves, mixing in sexy and comedy for a truly unforgettable show. With her infectious energy and killer sense of humor, Pitchy is sure to leave you laughing and wanting more.</p>
+    </div>
+
+    <div class="z-10  ">
+      <div class="rounded-full relative m-24 w-[400px] h-[400px] xl:w-[800px] xl:h-[800px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-100 group-hover:opacity-0" src="Images/pitchy.png" alt="">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-0 group-hover:opacity-100" src="Images/pitchy looking.png" alt="">
+        <div class="relative top-0 z-50 w-[full] h-[450px]  bg-white text-white translate-y-[400px] xl:translate-y-[800px] xl:group-hover:translate-y-[600px]  group-hover:translate-y-[255px] duration-300 ease-in-out">
+          <h2 class="text-lavender-800 text-center justify-center text-3xl py-3 xl:py-10 xl:text-5xl">Pitchy LaRoux</h2> 
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <div class="flex flex-col-reverse md:flex-row-reverse items-center justify-between w-screen">
+    <div class="z-10 ">
+      <h1 class="px-20 text-lavender-100 text-center justify-center md:text-end sm:justify-end text-3xl">Cruxifix June</h1>
+      <p class="px-20 text-lavender-100 text-center justify-center md:text-end sm:justify-end py-10 lg:text-xl">Get ready to be charmed and entertained by the fabulous Cruxifix June! As the main host of our shows, Cruxifix brings her larger-than-life personality to the stage with hilarious jokes, infectious energy, and a captivating presence that keeps everyone in the audience engaged and entertained!</p>
+    </div>
+
+    <div class="z-10  ">
+      <div class="rounded-full relative m-24 w-[400px] h-[400px] xl:w-[800px] xl:h-[800px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-100 group-hover:opacity-0" src="Images/hands out cruxifix.png" alt="">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-0 group-hover:opacity-100" src="Images/flying cruxifix 2.png" alt="">
+        <div class="relative top-0 z-50 w-[full] h-[450px]  bg-white text-white translate-y-[400px] xl:translate-y-[800px] xl:group-hover:translate-y-[600px]  group-hover:translate-y-[255px] duration-300 ease-in-out">
+          <h2 class="text-lavender-800 text-center justify-center text-3xl py-3 xl:py-10 xl:text-5xl">Cruxifix June</h2> 
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="flex flex-col-reverse md:flex-row items-center justify-between w-screen">
+    <div class="z-10 ">
+      <h1 class="px-10 text-lavender-100 text-center justify-center md:text-start sm:justify-start text-3xl">Rita Menu</h1>
+      <p class="px-10 text-lavender-100 text-center justify-center md:text-start sm:justify-start py-10 lg:text-xl">When Rita Menu takes the stage, all eyes are on her. This glamourous stage stealer knows how to work it with high-energy performances that are simply unforgettable. With her show-stopping looks and fierce personality, Rita Menu is a queen you won't want to miss.</p>
+    </div>
+
+    <div class="z-10  ">
+      <div class="rounded-full relative m-24 w-[400px] h-[400px] xl:w-[800px] xl:h-[800px] overflow-hidden bg-white shadow-xl cursor-pointer group">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-100 group-hover:opacity-0" src="Images/rita down.png" alt="">
+        <img class="absolute top-0 left-0 bg-cover group-hover:scale-110 duration-300 opacity-0 group-hover:opacity-100" src="Images/rita.png" alt="">
+        <div class="relative top-0 z-50 w-[full] h-[450px]  bg-white text-white translate-y-[400px] xl:translate-y-[800px] xl:group-hover:translate-y-[600px]  group-hover:translate-y-[255px] duration-300 ease-in-out">
+          <h2 class="text-lavender-800 text-center justify-center text-3xl py-3 xl:py-10 xl:text-5xl">Rita Menu</h2> 
+        </div>
+      </div>
+    </div>
+  </div>
+ <img class=" w-screen " src="hero/layered-waves-haikei (7).svg" alt=""> 
+</section>
+
+<section id="GALLERY">
+
+
+
+  <h1 class="text-7xl text-center my-20 text-lavender-800">GALLERY</h1>
+
+  <div class="columns-2 sm:columns-3 md:columns-4 lg:columns-5">
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/facebook banner.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/polyglamourous.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/sponsor list.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/royal battlegrounds 1 instagram post.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/rbg 2 facebook stories.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/queen of the ring finale.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/queen of the ring poster 2-Recovered.jpg" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/drag casting call poster print.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/Untitled-1.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/RITA menu banner.png" alt="">  
+    <img class=" p-2 hover:scale-150 duration-200 ease-in-out" src="Images/Betty boob banner.png" alt="">  
+  
+  </div>
+  
+ 
+
+</section>
+
+
+
+<section id="CONTACT" class="h-screen">
+  <h1 class="text-7xl text-center my-20 text-lavender-800">CONTACT US</h1>
+  <div class="max-w-[800px] mx-auto px-24 py-24 lg:px-6 align-middle bg-white rounded-3xl">
+    
+    <form id="contactform">
+      <div class="flex justify-between">
+        <div class="form-group items-center mb-6">
+          <input type="text" id="firstName" class="form-control block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-lavender-600 focus:outline-none" id="exampleInput7"
+            placeholder="First Name" required>
+        </div>
+        <div class="form-group mb-6">
+          <input type="text" id="lastName" class="form-control block
+            w-full
+            px-3
+            py-1.5
+            text-base
+            font-normal
+            text-gray-700
+            bg-white bg-clip-padding
+            border border-solid border-gray-300
+            rounded
+            transition
+            ease-in-out
+            m-0
+            focus:text-gray-700 focus:bg-white focus:border-lavender-600 focus:outline-none" id="exampleInput7"
+            placeholder="Last Name" required>
+        </div>
+      </div>
+
+      <div class="form-group mb-6">
+        <input type="email" id="email" class="form-control block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-lavender-600 focus:outline-none" id="exampleInput8"
+          placeholder="Email address" required>
+      </div>
+      <div class="form-group mb-6">
+        <textarea id="message" class="
+          form-control
+          block
+          w-full
+          px-3
+          py-1.5
+          text-base
+          font-normal
+          text-gray-700
+          bg-white bg-clip-padding
+          border border-solid border-gray-300
+          rounded
+          transition
+          ease-in-out
+          m-0
+          focus:text-gray-700 focus:bg-white focus:border-lavender-600 focus:outline-none
+        " id="exampleFormControlTextarea13" rows="3" placeholder="Message" required></textarea>
+      </div>
+      <div class="form-group form-check text-center mb-6">
+        <input type="checkbox"
+          class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-lavender-600 checked:border-lavender-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain mr-2 cursor-pointer"
+          id="exampleCheck87" checked>
+        <label class="form-check-label inline-block text-gray-800" for="exampleCheck87">Send me a copy of this
+          message</label>
+      </div>
+      <button  type="submit" class="
+        w-full
+        px-6
+        py-2.5
+        bg-lavender-600
+        text-white
+        font-medium
+        text-xs
+        leading-tight
+        uppercase
+        rounded
+        shadow-md
+        hover:bg-lavender-700 hover:shadow-lg
+        focus:bg-lavender-700 focus:shadow-lg focus:outline-none focus:ring-0
+        active:bg-lavender-800 active:shadow-lg
+        transition
+        duration-150
+        ease-in-out">Send</button>
+    </form>
+  </div>
+</section>
+
+
+<!--this small piece is what controls the arrow that shows up at the bottom right-->
+<a id="to-top-button" onclick="goToTop()" title="Go To Top" href="#home" class="fixed bottom-5 right-5 z-50">
+  <svg class="fill-lavender-800 opacity-50 hover:opacity-100  hover:scale-110 duration-200" xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-arrow-up-circle-fill" viewBox="0 0 16 16">
+    <path d="M16 8A8 8 0 1 0 0 8a8 8 0 0 0 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"/>
+  </svg>
+</a>
+
+
+
+
+
+<footer class="bg-gray-700">
+  <div class="max-w-screen-xl px-4 py-12 mx-auto space-y-8 overflow-hidden sm:px-6 lg:px-8">
+<div>
+        <div class=" flex items-center px-52 justify-between ">
+          <a class="px-4" href="https://www.facebook.com/Dragqueenshamilton/">  <?xml version="1.0"?>
+            <svg class="fill-lavender-100 hover:fill-lavender-300 hover:scale-110 duration-200 lg:px-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"/></svg>
+          </a>
+          <a class="px-4" href="https://www.instagram.com/victorsindrag/?hl=en">  <?xml version="1.0"?>
+            <svg class="fill-lavender-100 hover:fill-lavender-300 hover:scale-110 duration-200 lg:px-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M 16 3 C 8.83 3 3 8.83 3 16 L 3 34 C 3 41.17 8.83 47 16 47 L 34 47 C 41.17 47 47 41.17 47 34 L 47 16 C 47 8.83 41.17 3 34 3 L 16 3 z M 37 11 C 38.1 11 39 11.9 39 13 C 39 14.1 38.1 15 37 15 C 35.9 15 35 14.1 35 13 C 35 11.9 35.9 11 37 11 z M 25 14 C 31.07 14 36 18.93 36 25 C 36 31.07 31.07 36 25 36 C 18.93 36 14 31.07 14 25 C 14 18.93 18.93 14 25 14 z M 25 16 C 20.04 16 16 20.04 16 25 C 16 29.96 20.04 34 25 34 C 29.96 34 34 29.96 34 25 C 34 20.04 29.96 16 25 16 z"/></svg>
+          </a>
+          <a class="px-4" href="https://www.tiktok.com/@dragonvictok">  <?xml version="1.0"?>
+            <svg class="fill-lavender-100 hover:fill-lavender-300 hover:scale-110 duration-200 lg:px-2" xmlns="http://www.w3.org/2000/svg"  viewBox="0 0 50 50" width="50px" height="50px">    <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M37.006,22.323 c-0.227,0.021-0.457,0.035-0.69,0.035c-2.623,0-4.928-1.349-6.269-3.388c0,5.349,0,11.435,0,11.537c0,4.709-3.818,8.527-8.527,8.527 s-8.527-3.818-8.527-8.527s3.818-8.527,8.527-8.527c0.178,0,0.352,0.016,0.527,0.027v4.202c-0.175-0.021-0.347-0.053-0.527-0.053 c-2.404,0-4.352,1.948-4.352,4.352s1.948,4.352,4.352,4.352s4.527-1.894,4.527-4.298c0-0.095,0.042-19.594,0.042-19.594h4.016 c0.378,3.591,3.277,6.425,6.901,6.685V22.323z"/></svg>
+        
+          </a>
+          </div>
+  </div>
+</footer>
+
+
+
+
+
+<script>
+  const form = document.getElementById('contactForm');
+  const firstNameInput = document.getElementById('firstName');
+  const lastNameInput = document.getElementById('lastName');
+  const emailInput = document.getElementById('email');
+  const messageInput = document.getElementById('message');
+  form.addEventListener('submit', function(event){
+   if (!firstName.value || !lastName.value || !emailInput.value || !messageInput.value) {
+    event.preventDefault();
+    alert('Please fill out all fields.');}
+    else if (!isValidEmail (emailInput.value)) {
+      event.preventDefault();
+      alert('Please enter a valid email address.');}
+    else {
+      formError.textContent = '';}
+    
+    function isValidEmail(email){
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      return emailRegex.test(email);
+    }
+    }
+    
+  )
+</script>
+
+
+
+
+
+<script>
+  function Menu(e){
+    let list = document.querySelector('ul');
+
+    e.name === 'menu' ? (e.name = "close",list.classList.remove('top-[80px]')
+    ,list.classList.remove('opacity-100')) : (e.name = "menu" ,list.classList.add(
+      'top-[80px]'), list.classList.add('opacity-100'))
+
+  }
+</script>
+<script>
+  const navbar = document.getElementById('navbar');
+const scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+
+if (scrollPosition > 20) {
+  navbar.classList.add('fixed');
+} else {
+  navbar.classList.remove('fixed');
+}
+</script>
+<script>
+  var toTopButton = document.getElementById("to-top-button");
+
+  // When the user scrolls down 200px from the top of the document, show the button
+  window.onscroll = function () {
+      if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 420) {
+          toTopButton.classList.remove("hidden");
+      } else {
+          toTopButton.classList.add("hidden");
+      }
+  }
+
+  // When the user clicks on the button, scroll to the top of the document
+  function goToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+</script>
+
+
+
+<!--all of this script here controls the characters inside the header
+gsap captures the corresponding image, and while triggered by the scroll
+will move in and out of the space, there is also a scrub on each one to 
+emulate the effect of inertia-->
+<script >
+  gsap.registerPlugin(ScrollTrigger);
+
+gsap.to("#sheila", {
+    scrollTrigger: {
+        trigger: "#head",
+        start: "top",
+       
+        scrub: 2,
+        markers: true
+        
+    },
+    x: 800,
+  
+    ease: "none",
+    duration: 5
+})
+gsap.to("#prada", {
+    scrollTrigger: {
+        trigger: "#head",
+        start: "top",
+       
+        scrub: 2,
+        markers: false
+        
+    },
+    x: -800,
+  
+    ease: "none",
+    duration: 5
+})
+gsap.to("#pitchy", {
+    scrollTrigger: {
+        trigger: "#head",
+        start: "top",
+       
+        scrub: 4,
+        markers: false
+    },
+    x: 800,
+  
+    ease: "none",
+    duration: 5
+})
+gsap.to("#rita", {
+    scrollTrigger: {
+        trigger: "#head",
+        start: "top",
+       
+        scrub: 4,
+        markers: false
+        
+    },
+    x: -800,
+  
+    ease: "none",
+    duration: 5
+})
+</script>
+
+
+
+<!--
+    <span class="lg:hidden block" >
+        <div name="menu" onclick="Menu(this)">  
+          <svg class="ham hamRotate ham8 " viewBox="0 0 100 100" width="80" onclick="this.classList.toggle('active')">
+            <path class="line top" d="m 30,33 h 40 c 3.722839,0 7.5,3.126468 7.5,8.578427 0,5.451959 -2.727029,8.421573 -7.5,8.421573 h -20" />
+            <path class="line middle" d="m 30,50 h 40" />
+            <path class="line bottom" d="m 70,67 h -40 c 0,0 -7.5,-0.802118 -7.5,-8.365747 0,-7.563629 7.5,-8.634253 7.5,-8.634253 h 20" />
+          </svg>
+        </div>
+      </span>
+  
+  
+  
+  
+  <img class="z-[2]  drop-shadow-xl absolute object-cover h-[160rem] lg:h-[220rem] w-screen top-[-45rem] lg:top-[-75rem]" src="cutout images/1.svg" alt="">
+  <img class="z-[4]  drop-shadow-xl absolute object-cover h-[150rem] lg:h-[220rem] w-screen top-[-40rem] lg:top-[-75rem]" src="cutout images/5.svg" alt="">
+  <img class="z-[12] drop-shadow-xl absolute object-cover h-[150rem] lg:h-[220rem] w-screen top-[-40rem] lg:top-[-75rem]" src="cutout images/6.svg" alt="">
+  <img class="z-[6]  drop-shadow-xl absolute object-cover h-[150rem] lg:h-[220rem] w-screen top-[-40rem] lg:top-[-75rem]" src="cutout images/4.svg" alt="">
+  <img class="z-[8]  drop-shadow-xl absolute object-cover h-[150rem] lg:h-[220rem] w-screen top-[-40rem] lg:top-[-75rem]" src="cutout images/3.svg" alt="">
+  <img class="z-[10] drop-shadow-xl absolute object-cover h-[150rem] lg:h-[220rem ] w-screen top-[-40rem] lg:top-[-75rem]" src="cutout images/2.svg"->
+    -->
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+</body>
+</html>
